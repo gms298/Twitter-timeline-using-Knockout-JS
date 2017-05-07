@@ -29,4 +29,4 @@ The `data-bind` attribute in HTML5 is used to bind the data offered by the Knock
 
 ## <a name="tweet"></a>View the Timeline in Real-Time
 
-Please [click here](https://pages.github.com/gms298/Twitter-timeline-using-Knockout-JS) to view the twitter timeline (Github pages).
+Please [click here](https://gms298.github.io/Twitter-timeline-using-Knockout-JS/) to view the twitter timeline (Github pages).
