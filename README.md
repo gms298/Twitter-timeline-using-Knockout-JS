@@ -9,7 +9,7 @@
 
 Access the source code [here (index.html)](https://github.com/gms298/Twitter-timeline-using-Knockout-JS/blob/master/index.html). This index.html file contains inline CSS and Knockout JS data binding to produce the final product - a mock twitter timeline. The individual components in the index.html file is shown below. 
 
-**Note: The individual components are given in separate files for convenience purposes. They are non-executable. To run the timeline, just open the `[index.html](https://github.com/gms298/Twitter-timeline-using-Knockout-JS/blob/master/index.html)` file in any browser of your choice.**
+**Note: The individual components are given in separate files for convenience purposes. They are non-executable. To run the timeline, just open the [`index.html`](https://github.com/gms298/Twitter-timeline-using-Knockout-JS/blob/master/index.html) file in any browser of your choice.**
 
 #### Knockout JS
 
