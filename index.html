@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <title>HW3 Demo</title>
+    <style type="text/css">
+    .container
+      {
+        max-height: 50px;
+      }
+    .pic
+      {
+        float: left;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+        overflow: hidden;
+      }
+    .username
+      {
+        padding-top: 100px;
+        font-weight: bold;
+      }
+    .username-small
+      {
+        padding-top: 100px;
+        margin-left: 5px;
+        font:12px arial, sans-serif;
+        color: grey;
+      }
+    .tweet-body
+      {
+        max-width: 80%;
+        font:14px arial, sans-serif;
+        word-break: break-word;
+      }
+    .tweet-controls
+      {
+        font:16px arial, sans-serif;
+        color: grey;
+      }
+    .reply
+      {
+        margin-right: 50px;
+      }
+    .retweet
+      {
+        margin-left: 4px;
+        margin-right: 50px;
+      }
+    .like-tweet
+      {
+        margin-left: 4px;
+        margin-right: 50px;
+      }
+    .others
+      {
+        margin-left: 4px;
+        margin-right: 50px;
+      }
+    .tweetpicture
+      {
+        max-width: 100%;
+        height: auto;
+        border-radius: 7px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    </style>
+    <script type='text/javascript'>
+      window.onload=function() {
+      var Tweet = function(name, username, time, tweet, retweets, favs, profPic, tweetPic) {
+          this.profilePic= profPic;
+          this.name = name;
+          this.userName = username;
+          this.timeStamp = time;
+          this.tweetBody = tweet;
+          this.retweetCount = retweets;
+          this.favCount = favs; 
+          this.tweetPic = tweetPic;
+          }
+      var twitterViewModel = {
+          tweets: [
+          new Tweet("Taylor", "@tay12", "1m", "Look at this cool way to connect outlets to my ViewController.", "56", "25", "https://media.github.ncsu.edu/user/5816/files/578f138e-8e60-11e6-9a96-b474e3cc9776", "https://media.github.ncsu.edu/user/5816/files/406a0ca6-8e5e-11e6-81ea-826758e9bcd0"),
+          new Tweet("John", "@john47", "3m", "Xcode now shows a live preview of exactly how the app will appear on any Apple device with full vibrancy. Wow..", "3", "6", "https://media.github.ncsu.edu/user/5816/files/707e374e-8e60-11e6-8173-3af17b36ea11", ""),
+          new Tweet("Bertrand", "@bert", "4m", "Xcode 8 just launched. It's a radically faster version which features new editor extensions that can completely customize coding experiences.", "347", "84", "https://media.github.ncsu.edu/user/5816/files/7fdf88fa-8e60-11e6-8a45-cd0352a5194f", "https://media.github.ncsu.edu/user/5816/files/0be304b4-8e5f-11e6-9858-2ff0b56d3c13"),
+          new Tweet("Charles", "@charlie", "5m", "This changes everything. Xcode 8 is way faster and cooler!", "84", "39", "https://media.github.ncsu.edu/user/5816/files/90daa354-8e62-11e6-9dfa-835397035f37", "")
+          ]
+      };
+ko.applyBindings(twitterViewModel);
+}
+</script>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+  <h3 align="center">Knockout, CSS DEMO (Twitter Timeline)</h3>
+</div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+    <div class="table-responsive">
+    <table class="table" data-bind="foreach: tweets">
+      <tr>
+        <td width="10%">
+          <img class="pic" data-bind="attr:{src: profilePic}" /> 
+        </td>
+        <td width="90%">
+          <span class="username" data-bind="text: name"></span>
+          <span class="username-small" data-bind="text: userName"></span> .
+          <span class="username-small" data-bind="text: timeStamp"></span><br />
+          <span class="tweet-body" data-bind="text: tweetBody"></span><br />
+          <img class="tweetpicture" data-bind="attr:{src: tweetPic}" /><br />
+          <div class="tweet-controls">
+            <i class="fa fa-reply" aria-hidden="true"><span class="reply"></span></i>
+            <i class="fa fa-retweet" aria-hidden="true">
+              <span class="retweet" data-bind="text: retweetCount"></span></i>
+            <i class="fa fa-heart"><span class="like-tweet" data-bind="text: favCount"></span></i>
+            <i class="fa fa-ellipsis-h" aria-hidden="true"><span class="others"></span></i>
+          </div>
+        </td> 
+      </tr>
+    </table>
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+</div>  
+</body>
+</html>
